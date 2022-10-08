@@ -1,0 +1,25 @@
+.footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 5rem;
+    background-color: $cafeOscuro;
+    border-radius: 50% 50% 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contenedor_texto {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+
+        p {
+            color: $blanco;
+            font-size: 1.4rem;
+            font-family: $cuarta;
+            margin-top: 1.3rem;
+        }
+
+    }
+}

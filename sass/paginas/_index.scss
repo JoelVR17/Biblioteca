@@ -1,0 +1,32 @@
+/* ? PONER FOOTER ABAJO */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+/*  TEXTO EN FOTO */
+.contenedor_texto {
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    margin-top: 15rem;
+    display: flex;
+    justify-content: center;
+
+    .texto {
+        border: 2px solid $blanco;
+        width: 40%;
+        background-color: $negro;
+        opacity: 0.7;
+    }
+
+    p {
+        padding: 5px;
+        color: $blanco;
+        text-transform: uppercase;
+        font-family: $secundaria;
+        font-weight: 900;
+        font-size: 30px;
+    }
+}
