@@ -16,13 +16,10 @@
     <nav id="nav">
         <ul id="list">
             <li>
-                <a href="" class="link">Iniciar Sesión</a>
+                <a href="./login.php" id="myInput" class="link">Iniciar Sesión</a>
             </li>
             <li>
-                <a href="" class="link">Registrarse</a>
-            </li>
-            <li>
-                <a href="" class="link"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a href="./registro.php" class="link">Registrarse</a>
             </li>
         </ul>
     </nav>

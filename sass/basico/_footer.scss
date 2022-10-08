@@ -3,7 +3,7 @@
     position: absolute;
     width: 100%;
     min-height: 5rem;
-    background-color: $cafeOscuro;
+    background-color: $negro;
     border-radius: 50% 50% 0 0;
     display: flex;
     justify-content: center;
@@ -16,7 +16,7 @@
 
         p {
             color: $blanco;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-family: $cuarta;
             margin-top: 1.3rem;
         }

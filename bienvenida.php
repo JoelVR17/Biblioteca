@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!-- HTML5 -->
 <!DOCTYPE html>
 
@@ -30,7 +34,6 @@
         /* Michroma */
         @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
     </style>
-    <!--  -->
     <!-- TITLE -->
     <title>Biblioteca Joel Vargas</title>
 </head>
@@ -45,18 +48,13 @@
     require './plantillas/header.php';
     ?>
 
-    <!-- CONTENEDOR DEL TEXTO -->
-    <div class="contenedor_texto">
-        <div class="texto">
-            <p>En caso de duda, ve a la biblioteca</p>
-        </div>
-    </div>
+    <!-- FONDO -->
     <div class="contendor_imagen">
         <img src="./img/img2.webp" class="d-block w-100" alt="img">
     </div>
 
     <!-- FOOTER -->
-    <?php 
+    <?php
     require './plantillas/footer.php';
     ?>
 
