@@ -1,0 +1,25 @@
+// ! IMPORTACION DE LOS ARCHIVOS SASS
+@import './globales/paletaColor';
+@import './globales/paletaFuentes';
+
+body {
+    h1 {
+        font-family: $primaria;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-family: $secundaria;
+        font-weight: 500;
+    }
+
+    h3 {
+        font-family: $tercera;
+        font-weight: 500;
+    }
+
+    h4 {
+        font-family: $cuarta;
+        font-weight: 500;
+    }
+}
