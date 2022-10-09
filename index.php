@@ -22,10 +22,7 @@
     require './plantillas/header.php';
     ?>
 
-    <!-- FONDO -->
-    <div class="contendor_imagen">
-        <img src="./img/img2.webp" class="d-block w-100" alt="img">
-    </div>
+    <h1>Hola bienvenido</h1>
 
     <!-- FOOTER -->
     <?php

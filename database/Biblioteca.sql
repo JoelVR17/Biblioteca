@@ -10,7 +10,7 @@ INSERT INTO rol (id_rol, descripcion)
 VALUES 
 (1, "user"), (2, "admin");
 
-CREATE TABLE usuario (
+CREATE TABLE usuarios (
 	id_usuario int primary key auto_increment not null,
     id_rol int not null,
     nombre varchar(40) not null,
@@ -20,7 +20,7 @@ CREATE TABLE usuario (
     foreign key fk_id_rol (id_rol) references rol(id_rol)
 );
 
-INSERT INTO usuario (id_rol, nombre, cedula, usuario, pwd)
+INSERT INTO usuarios (id_rol, nombre, cedula, usuario, pwd)
 VALUES 
 (1,"Joel","504510629","joelvr","joel123"),
 (2,"Marvin","502030790","marvinvr","marvin123");
