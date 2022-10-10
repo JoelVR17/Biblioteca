@@ -106,15 +106,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </div>
                             <div class="fonticon col-6">
                                 <label for="registerUser" class="form-label">Cedula</label>
-                                <input type="text" name="cedula" class="form-control" id="registerCedula">
+                                <input type="text" name="cedula" class="form-control" id="registerCedula" minlength="9">
                             </div>
                             <div class="fonticon col-12">
                                 <label for="registerUser" class="form-label">Usuario</label>
-                                <input type="text" name="usuario" class="form-control" id="registerUsuario">
+                                <input type="text" name="usuario" class="form-control" id="registerUsuario" minlength="5">
                             </div>
                             <div class="fonticon col-12">
                                 <label for="registerPass" class="form-label">Contraseña</label>
-                                <input type="password" name="passwd" class="form-control" id="registerPass">
+                                <input type="password" name="passwd" class="form-control" id="registerPass" minlength="8">
                             </div>
                             <div class="col-12" id="x">
                                 <input type="submit" class="btn" id="entrarSistema" value="Registrarse" readonly>

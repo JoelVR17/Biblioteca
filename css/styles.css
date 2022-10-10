@@ -727,4 +727,16 @@ body {
   overflow-y: hidden;
 }
 
+.imgLibro {
+  width: 90% !important;
+  height: 60% !important;
+  margin: 0 auto;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  -webkit-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.75);
+}
+
 /*# sourceMappingURL=styles.css.map */

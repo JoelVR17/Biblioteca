@@ -74,6 +74,9 @@ require './plantillas/head.php';
     <!-- DATATABLE -->
     <div class="contenedor">
         <div class="container dataTable sm">
+            <div class="cont-titulo">
+                <h1>Biblioteca</h1>
+            </div>
 
             <div class="contenedor_boton">
                 <a href="./libro.php" class="boton btn-verde">Nuevo Libro</a>
@@ -82,7 +85,7 @@ require './plantillas/head.php';
             <div class="card-group">
                 <?php while ($libro = mysqli_fetch_assoc($resultado)) : ?>
                     <div class="card">
-                        <img src="..." class="card-img-top" alt="...">
+                        <img class="imgLibro" src="./imagenLibros/libros.jpg" class="card-img-top" alt="...">
                         <div class="card-body ">
                             <h5 class="card-title tituloCard"><?php echo $libro['titulo']; ?></h5>
                             <h6 class="card-title autorCard"><?php echo $libro['autor']; ?></h6>

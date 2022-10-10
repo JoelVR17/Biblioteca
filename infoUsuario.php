@@ -93,10 +93,6 @@ require './plantillas/head.php'
                             </div>
                             <a style="margin-top: 10px !important;" href="./actualizarLibro.php?id=<?php echo $libro['id_libro']; ?>" class="boton btn-verde botonG xl">Actualizar</a>
                             <br><br><br>
-                            <form method="POST">
-                                <input type="hidden" name="id_eliminar" value="<?php echo $libro['id_libro']; ?>">
-                                <input type="submit" href="./index.php" class="boton botonG btn-rojo" value="Borrar" />
-                            </form>
                         </div>
                     <?php endwhile; ?>
                 </div>

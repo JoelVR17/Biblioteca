@@ -44,7 +44,7 @@ VALUES
 (4,"Biblia","Dios","Vida","1960", "Conjunto de libro1s que son el manual de la vida del humano", "dsaaaaaaasdwqwqe12313"),
 (5,"Harry Potter","Steven","Magia","2012", "Magia y brujos", "hjgfhjg313");
 
-SELECT count(*) FROM libros;
+SELECT COUNT(*) FROM usuarios WHERE usuario = 'damaris'
 
 
 
