@@ -1,5 +1,6 @@
 <?php
-
+    // session_unset();
+    // session_destroy();
 ?>
 
 <!-- HTML5 -->
@@ -19,7 +20,7 @@
 
     <!-- HEADER -->
     <?php
-    require './plantillas/header.php';
+    require './plantillas/headerB.php';
     ?>
 
     <!-- FONDO -->

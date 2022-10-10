@@ -1,0 +1,10 @@
+.ssm {
+    height: 10% !important;
+}
+
+/* ? MEDIA QUERY MD (tablets, 768px and up)*/
+@media (min-width: 320px) and (max-width: 1024px) {
+    .marginB {
+        margin-bottom: 30px;
+    }
+}

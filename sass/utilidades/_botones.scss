@@ -1,0 +1,54 @@
+.contenedor_boton {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.boton {
+    padding: 3px;
+    width: 10%;
+    text-transform: uppercase;
+    color:  $blanco;
+    text-align: center;
+    font-weight: 500;
+    font-family: $primaria;
+    min-height: 25px !important;
+    border: 1px solid $blanco;
+}
+
+.botonG {
+    width: 100% !important;
+    text-transform: none !important;
+}
+
+.btn-verde {
+    background-color: $verde;
+}
+
+.btn-verde:hover {
+    background-color: $blanco;
+    color: $negro;
+    border: 1px solid $verde;
+}
+
+.btn-rojo {
+    background-color: $rojo;
+}
+
+.btn-rojo:hover {
+    background-color: $blanco;
+    color: $negro;
+    border: 1px solid $rojo;
+}
+
+.btn-negro {
+    background-color: $negro;
+    color: $blanco;
+}
+
+.btn-negro:hover {
+    background-color: $blanco;
+    color: $negro;
+    border: 1px solid $negro;
+}

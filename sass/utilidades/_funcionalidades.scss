@@ -1,0 +1,50 @@
+.columnTipo {
+    display: flex;
+    flex-direction: column;
+}
+
+.rowTipo {
+    display: flex;
+    flex-direction: row;
+}
+
+.sm {
+    width: 50%;
+}
+
+.xxl {
+    width: 100%;
+    height: 20%;
+}
+
+.xl {
+    width: 100%;
+}
+
+.centrar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.marginT {
+    margin-top: 40px;
+}
+
+.centrarTexto {
+    text-align: center;
+}
+
+.separacion {
+    width: 100%;
+    height: 45px !important;
+}
+
+.centrarVertical {
+    display: flex;
+    align-items: center;
+}
+
+.cursor {
+    cursor: pointer;
+}

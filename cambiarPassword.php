@@ -4,52 +4,27 @@
 require './database/config.php';
 $db = conectarBD();
 
-$error = 0;
-
 //  SE ESUCHA POR UNA PETICION POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //  se obtienen los datos del formulario
+    $cedula = mysqli_real_escape_string($db, $_POST['cedula']);
     $usuario = mysqli_real_escape_string($db, $_POST['usuario']);
     $password = mysqli_real_escape_string($db, $_POST['passwd']);
 
-    // revisar si el usuario existe
-    $query = "SELECT * FROM usuarios WHERE usuario = '${usuario}' ";
-    $resultado = mysqli_query($db, $query);
+    //  se hashea el password
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    //  SI EL USUARIO EXISTE    
-    if ($resultado->num_rows) {
-        // Revisar si el password esta bien
-        $usuario = mysqli_fetch_assoc($resultado);
+    //  se inserta usuario
+    $query = "UPDATE usuarios SET pwd = '${passwordHash}' WHERE cedula = '${cedula}' and usuario = '${usuario}'";
 
-        // Password a revisar y el de la BD.
-        if (password_verify($password, $usuario['pwd'])) {
-            $auth = true;
-        } else {
-            $auth = false;
-        }
+    $resultado = mysqli_query($db, $query) or die(mysqli_error($db));
 
-        if ($auth) {
-            session_start();
-            $idS = $usuario['id_usuario'];
-            $usuarioS = $usuario['usuario'];
-            $cedulaS = $usuario['cedula'];
-            $nombreS = $usuario['nombre'];
-
-            $_SESSION['id'] = $idS;
-            $_SESSION['nombre'] = $nombreS;
-            $_SESSION['usuario'] = $usuarioS;
-            $_SESSION['cedula'] = $cedulaS;
-            $_SESSION['login'] = 1;
-
-            header('location: ./index.php');
-        } else {
-            $error = 1;
-        }
+    if ($resultado) {
+        header('location: ./login.php');
     } else {
-        $error = 2;
+        echo '<p>La Cédula o Usuario no coinciden</p>';
     }
 }
-
 ?>
 
 <!-- HTML5 -->
@@ -85,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         @import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
     </style>
     <!-- TITLE -->
-    <title>Login</title>
+    <title>Registro</title>
 </head>
 <!--fin.Head-->
 
@@ -109,37 +84,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="cont-form">
                     <div class="cont-form-cont">
                         <div class="cont-titulo">
-                            <h1>¡Inicia Sesión!</h1>
+                            <h1>Cambiar Contraseña</h1>
                         </div>
                         <form method="POST" class="row g-3" id="formRegistro">
-                            <div class="fonticon col-12">
-                                <label for="registerUser" class="form-label">Usuario</label>
-                                <input type="text" name="usuario" class="form-control" id="registerUsuario">
+                            <div class="fonticon col-6">
+                                <label for="cambiarCedula" class="form-label">Cedula</label>
+                                <input type="text" name="cedula" class="form-control" id="cambiarCedula">
+                            </div>
+                            <div class="fonticon col-6">
+                                <label for="cambiarUser" class="form-label">Usuario</label>
+                                <input type="text" name="usuario" class="form-control" id="cambiarUsuario">
                             </div>
                             <div class="fonticon col-12">
-                                <label for="registerPass" class="form-label">Contraseña</label>
-                                <input type="password" name="passwd" class="form-control" id="registerPass">
+                                <label for="cambiarPass" class="form-label">Contraseña</label>
+                                <input type="password" name="passwd" class="form-control" id="cambiarPass">
                             </div>
                             <div class="col-12" id="x">
-                                <input type="submit" class="btn" id="entrarSistema" value="Ingresar" readonly>
+                                <input type="submit" class="btn" id="entrarSistema" value="Actualizar" readonly>
                             </div>
                             <div class="registrate">
-                                <p class="registro">¿No tienes cuenta? -
-                                    <a class="registroA" href="registro.php">Regístrate</a>
-                                </p>
-                                <p class="registro">¿Olvidaste la contraseña? -
-                                    <a class="registroA" href="./cambiarPassword.php">Recupérala</a>
+                                <p class="registro">
+                                    <a class="registroA" href="./login.php"><i class="fa-solid fa-backward"></i></a>
                                 </p>
                             </div>
+                            <p id="para"></p>
                         </form>
                     </div>
                 </div>
-                <?php
-                if ($error == 1) {
-                    echo '<div class="contenedor_error"><p class="anuncio">Contraseña Incorrecta</p></div>';
-                } else if ($error == 2){
-                    echo '<div class="contenedor_error"><p class="anuncio">El Usuario no Existe</p></div>';
-                }?>
             </div>
         </div>
     </main>
@@ -148,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!--fin.body-->
 
 <!-- JAVASCRIPT -->
-<script src=""></script>
+<script src="./js/registro.js"></script>
 
 </html>
 <!--fin.html-->

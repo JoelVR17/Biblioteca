@@ -4,6 +4,8 @@
 require './database/config.php';
 $db = conectarBD();
 
+$error = 0;
+
 //  SE ESUCHA POR UNA PETICION POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //  se obtienen los datos del formulario
@@ -15,17 +17,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //  se hashea el password
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-    //  se inserta usuario
-    $query = "INSERT INTO usuarios (id_rol, nombre, cedula, usuario, pwd) VALUES (1,'$nombre', '$cedula', '$usuario', '$passwordHash')";
+    //  SE VERIFICA QUE NO HAYAN USUARIOS REPETIDOS
+    $query = "SELECT COUNT(*) AS cant FROM usuarios WHERE usuario = '${usuario}'";
+    $resultadoR = mysqli_query($db, $query) or die(mysqli_error($db));
 
-    $resultado = mysqli_query($db, $query) or die (mysqli_error($db));
+    $repetido = mysqli_fetch_assoc($resultadoR);
 
-    if ($resultado) {
-        header('location: ./login.php');
+    if ($repetido['cant'] == '0') {
+        //  se inserta usuario
+        $query = "INSERT INTO usuarios (id_rol, nombre, cedula, usuario, pwd) VALUES (1,'$nombre', '$cedula', '$usuario', '$passwordHash')";
+
+        $resultado = mysqli_query($db, $query) or die(mysqli_error($db));
+
+        if ($resultado) {
+            header('location: ./login.php');
+        } else {
+            echo '<p></p>';
+        }
     } else {
-        echo "error";
+        $error = 1;
     }
-
 }
 ?>
 
@@ -117,6 +128,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </form>
                     </div>
                 </div>
+                <?php
+                if ($error == 1) {
+                    echo '<div class="contenedor_error"><p class="anuncio">Intenta con un Usuario Diferente</p></div>';
+                } ?>
             </div>
         </div>
     </main>

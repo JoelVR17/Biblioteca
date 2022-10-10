@@ -322,6 +322,129 @@ body {
   grid-template-rows: auto 1fr auto;
 }
 
+.contenedor_error {
+  margin: 0 auto;
+  width: 80%;
+  height: auto;
+  margin-top: 16%;
+  text-align: center;
+  background-color: red;
+  padding: 1px;
+}
+
+.anuncio {
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+}
+
+.contenedor_boton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.boton {
+  padding: 3px;
+  width: 10%;
+  text-transform: uppercase;
+  color: #FFF;
+  text-align: center;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  min-height: 25px !important;
+  border: 1px solid #FFF;
+}
+
+.botonG {
+  width: 100% !important;
+  text-transform: none !important;
+}
+
+.btn-verde {
+  background-color: green;
+}
+
+.btn-verde:hover {
+  background-color: #FFF;
+  color: #000;
+  border: 1px solid green;
+}
+
+.btn-rojo {
+  background-color: red;
+}
+
+.btn-rojo:hover {
+  background-color: #FFF;
+  color: #000;
+  border: 1px solid red;
+}
+
+.btn-negro {
+  background-color: #000;
+  color: #FFF;
+}
+
+.btn-negro:hover {
+  background-color: #FFF;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.columnTipo {
+  display: flex;
+  flex-direction: column;
+}
+
+.rowTipo {
+  display: flex;
+  flex-direction: row;
+}
+
+.sm {
+  width: 50%;
+}
+
+.xxl {
+  width: 100%;
+  height: 20%;
+}
+
+.xl {
+  width: 100%;
+}
+
+.centrar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.marginT {
+  margin-top: 40px;
+}
+
+.centrarTexto {
+  text-align: center;
+}
+
+.separacion {
+  width: 100%;
+  height: 45px !important;
+}
+
+.centrarVertical {
+  display: flex;
+  align-items: center;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
 /*CONTENEDOR PRINCIPAL*/
 .container-fluid {
   min-height: 100vh;
@@ -523,6 +646,85 @@ h1 {
   #body {
     min-height: 920px;
   }
+}
+.nombreUsuario {
+  font-size: 1.7rem;
+}
+
+.ssm {
+  height: 10% !important;
+}
+
+/* ? MEDIA QUERY MD (tablets, 768px and up)*/
+@media (min-width: 320px) and (max-width: 1024px) {
+  .marginB {
+    margin-bottom: 30px;
+  }
+}
+/* ? PONER FOOTER ABAJO */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.dataTable {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.table {
+  height: 50% !important;
+}
+
+.tituloTabla {
+  color: #373536 !important;
+  font-size: 1.5rem;
+}
+
+.contenedor {
+  margin: 50px;
+}
+
+/* CARD */
+.tituloCard {
+  font-weight: 700 !important;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 1.7rem !important;
+}
+
+.autorCard {
+  text-align: right;
+  font-family: "Michroma", sans-serif;
+}
+
+.descripcionCard {
+  font-size: 1.1rem;
+  text-align: justify;
+  font-weight: 300 !important;
+}
+
+.fechaCard {
+  text-align: center;
+  font-weight: 800;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+
+.total {
+  font-family: "Montserrat Alternates", sans-serif;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.cantidad {
+  font-weight: 400 !important;
+}
+
+.ocultar {
+  max-width: 0.1% !important;
+  max-height: 0.1% !important;
+  opacity: 0 !important;
+  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

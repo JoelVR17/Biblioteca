@@ -1,0 +1,65 @@
+/* ? PONER FOOTER ABAJO */
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.dataTable {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.table {
+    height: 50% !important;
+}
+
+.tituloTabla {
+    color: $cafeOscuro !important;
+    font-size: 1.5rem;
+}
+
+.contenedor {
+    margin: 50px;
+}
+
+/* CARD */
+.tituloCard {
+    font-weight: 700 !important;
+    font-family: $tercera !important;
+    font-size: 1.7rem !important;
+}
+
+.autorCard {
+    text-align: right;
+    font-family: $cuarta;
+}
+
+.descripcionCard {
+    font-size: 1.1rem;
+    text-align: justify;
+    font-weight: 300 !important;
+}
+
+.fechaCard {
+    text-align: center;
+    font-weight: 800;
+    font-family: $secundaria;
+}
+
+.total {
+    font-family: $secundaria;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.cantidad {
+    font-weight: 400 !important;
+}
+
+.ocultar {
+    max-width: .1% !important;
+    max-height: .1% !important;
+    opacity: 0 !important;
+    overflow-y: hidden;
+}
